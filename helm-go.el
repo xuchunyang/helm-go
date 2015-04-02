@@ -58,6 +58,15 @@ Currently, only Mac OS X is supported."
     (action . (("Open App" . helm-go--open-app)))
     (candidate-number-limit .  9999)))
 
+(defvar helm-go--web-source
+  (helm-build-dummy-source "Web Search"
+    :action '(("Web Search" .
+               (lambda (cand)
+                 (browse-url
+                  (concat
+                   "http://www.google.com/search?ie=utf-8&oe=utf-8&q="
+                   (url-hexify-string cand))))))))
+
 ;;;###autoload
 (defun helm-go (arg)
   "Helm Go entry point.
@@ -67,7 +76,8 @@ With prefix argument, refresh `helm-go-apps-list'."
     (setq helm-go-apps-list-refresh-flag t))
   (when (or (null helm-go-apps-list) helm-go-apps-list-refresh-flag)
     (helm-go--collect-apps))
-  (helm :sources '(helm-go--app-source)
+  (helm :sources '(helm-go--app-source
+                   helm-go--web-source)
         :buffer "*Helm Go*"))
 
 (provide 'helm-go)

@@ -2,10 +2,10 @@
 
 ## Features
 
-- Launch App
+- Launch App (Mac OS X only)
+- Web Search
 
 ## Todos
 
-- [ ] Web Search
 - [ ] Calculator
 - [ ] Terminal / Shell (Open the terminal and run shell command)
