@@ -4,8 +4,8 @@
 
 - Launch App (Mac OS X only)
 - Web Search
+- Calculator
 
 ## Todos
 
-- [ ] Calculator
 - [ ] Terminal / Shell (Open the terminal and run shell command)
