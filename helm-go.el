@@ -50,7 +50,7 @@ Currently, only Mac OS X is supported."
 
 Currently, only Mac OS X is supported."
   (call-process "open" nil 0 nil
-                "-a" (shell-quote-argument candidate)))
+                "-a" candidate))
 
 (defvar helm-go--app-source
   '((name . "Open App")
